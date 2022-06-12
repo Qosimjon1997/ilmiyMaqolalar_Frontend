@@ -1,0 +1,10 @@
+mat-card{
+    width: 300px;
+    float: left;
+    margin: 20px;
+    
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,0 +1,32 @@
+<h1>All authors!</h1>
+<button (click)="btnOpenDialogForAddAuthor()">
+  <mat-icon>person_add</mat-icon>
+</button>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Secondname</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Passport</th>
+      <th>Degree</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of allAuthors">
+      <td>{{item.firstname}}</td>
+      <td>{{item.secondname}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.phone}}</td>
+      <td>{{item.passport}}</td>
+      <td>{{item.degree}}</td>
+      <td>
+        <button (click)="btnDelete(item.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

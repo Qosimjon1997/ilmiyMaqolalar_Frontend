@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Add manager</h1>
+<form (ngSubmit)="clickSubmit()">
+    <div mat-dialog-content>
+        <p>Full name</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Full name</mat-label>
+            <input matInput required [formControl]="form_fio" >
+            <mat-error *ngIf="form_fio.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <p>Username</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput required [formControl]="form_username" >
+            <mat-error *ngIf="form_username.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide1 ? 'password' : 'text'" required [formControl]="form_passw1"
+                (keyup)="checkPassword()" >
+            <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide1">
+                <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="form_passw1.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div mat-dialog-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password(one more times)</mat-label>
+            <input matInput [type]="hide2 ? 'password' : 'text'" required [formControl]="form_passw2"
+                (keyup)="checkPassword()" >
+            <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide2">
+                <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="form_passw2.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button cdkFocusInitial [disabled]="btnDisabled" >Ok</button>
+    </div>
+</form>

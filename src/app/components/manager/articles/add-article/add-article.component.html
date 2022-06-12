@@ -1,0 +1,54 @@
+<h1 mat-dialog-title>Add article</h1>
+<form>
+    <div mat-dialog-content>
+        <p>Topic name</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Topic name</mat-label>
+            <input matInput required [formControl]="form_topic">
+            <mat-error *ngIf="form_topic.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <p>Anotation</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Anotation</mat-label>
+            <input matInput required [formControl]="form_anotation">
+            <mat-error *ngIf="form_anotation.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <p>Curriculum name</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Curriculum name</mat-label>
+            <mat-select [(ngModel)]="selectedValueCurriculumName" name="curriculumname">
+                <mat-option *ngFor="let curriculum of allCurriculum" [value]="curriculum.id">
+                    {{curriculum.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <p>Author name</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Author name</mat-label>
+            <mat-select [(ngModel)]="selectedValueAuthorName" name="authorname">
+                <mat-option *ngFor="let author of allAuthor" [value]="author.id">
+                    {{author.firstname}} {{author.secondname}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <mat-label>Choose photo(.jpg)</mat-label>
+        <app-upload [disabled]="showProgress2" (myfile)="myfile2($event)" (uploadStatus)="uploadStatus2($event)">
+        </app-upload>
+    </div>
+    <div mat-dialog-content>
+        <mat-label>Choose file(.doc | .docx)</mat-label>
+        <app-upload [disabled]="showProgress" (myfile)="myfile($event)" (uploadStatus)="uploadStatus($event)">
+        </app-upload>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button (click)="clickSubmit()" cdkFocusInitial >Ok</button>
+    </div>
+</form>

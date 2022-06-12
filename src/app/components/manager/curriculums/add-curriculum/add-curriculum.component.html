@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Add curriculum</h1>
+<form (ngSubmit)="clickSubmit()" >
+    <div mat-dialog-content>
+    <p>Name</p>
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput required [formControl]="form_name" (keyup)="check($event)">
+        <mat-error *ngIf="form_name.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+    <button mat-raised-button cdkFocusInitial  [disabled]="btnDisabled">Ok</button>
+    </div>
+</form>

@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>Add author</h1>
+<form (ngSubmit)="clickSubmit()">
+    <div mat-dialog-content>
+        <p>Firstname</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Firstname</mat-label>
+            <input matInput required [formControl]="form_firstname">
+            <mat-error *ngIf="form_firstname.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <p>Secondname</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Secondname</mat-label>
+            <input matInput required [formControl]="form_secondname" >
+            <mat-error *ngIf="form_secondname.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <p>Email</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput required [formControl]="form_email" >
+            <mat-error *ngIf="form_email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <p>Phone</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input matInput required [formControl]="form_phone" >
+            <mat-error *ngIf="form_phone.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <p>Passport</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Passport</mat-label>
+            <input matInput required [formControl]="form_passport" >
+            <mat-error *ngIf="form_passport.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+        <p>Degree</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Degree</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="food">
+              <mat-option *ngFor="let degree of degrees" [value]="degree">
+                {{degree}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button cdkFocusInitial>Ok</button>
+    </div>
+</form>

@@ -1,0 +1,19 @@
+<h1>Firstname of author : {{ selectedAuthor.firstname }}</h1>
+<h1>Secondname of author : {{ selectedAuthor.secondname }}</h1>
+<h1>Degree of author : {{ selectedAuthor.degree }}</h1>
+<h1>Phone number of author : {{ selectedAuthor.phone }}</h1>
+<h1>Count of articles : {{ selectedAuthor.count }}</h1>
+
+<h1 style="text-align: center; font-weight: bold;">{{ selectedAuthor.firstname }} {{ selectedAuthor.secondname }} articles</h1>
+
+<div *ngFor="let article of allArticle" >
+    <mat-card class="example-card">
+        <img mat-card-image src={{article.photoPath}} alt="Photo">
+        <mat-card-title>{{article.topic}}</mat-card-title>
+        <mat-card-content>Autor : {{article.authorFirstname}} {{article.authorSecondname}}</mat-card-content>
+        <mat-card-subtitle>Curriculum : {{article.curriculumName}}</mat-card-subtitle>
+        <mat-card-footer>
+            <button  mat-button color="primary" (click)="openArticle(article.id)">Open article</button>
+        </mat-card-footer>
+    </mat-card>
+</div> 

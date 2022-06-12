@@ -1,0 +1,10 @@
+mat-card{
+    width: 300px;
+    float: left;
+    margin: 20px;
+    
+}
+
+.example-card {
+    max-width: 400px;
+  }

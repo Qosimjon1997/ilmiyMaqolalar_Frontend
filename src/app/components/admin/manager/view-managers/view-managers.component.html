@@ -1,0 +1,22 @@
+<h1>All managers!</h1>
+<button (click)="btnOpenDialogForAddManager()">
+  <mat-icon>person_add</mat-icon>
+</button>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>FIO</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of allManagers">
+      <td>{{item.fio}}</td>
+      <td>
+        <button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

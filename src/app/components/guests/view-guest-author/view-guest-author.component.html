@@ -1,0 +1,9 @@
+<h1>All authors</h1>
+<div *ngFor="let author of allAuthors">
+    <a routerLink="../authors/{{author.id}}">
+        <mat-card>
+            <mat-card-title>{{author.secondname}} {{author.firstname}}</mat-card-title>
+            <mat-card-subtitle>Count of articles : {{author.count}}</mat-card-subtitle>
+        </mat-card>
+    </a>
+</div>

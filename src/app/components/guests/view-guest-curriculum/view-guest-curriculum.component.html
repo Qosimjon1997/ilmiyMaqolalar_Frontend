@@ -1,0 +1,10 @@
+<h1>All Curriculums</h1>
+<div *ngFor="let curriculum of allCurriculums">
+    <a routerLink="../curriculums/{{curriculum.id}}">
+        <mat-card>
+            <mat-card-title>{{curriculum.name}}</mat-card-title>
+            <!-- <mat-card-content>{{author.secondname}}</mat-card-content> -->
+            <mat-card-subtitle>Count of articles : {{curriculum.count}}</mat-card-subtitle>
+        </mat-card>
+    </a>
+</div>

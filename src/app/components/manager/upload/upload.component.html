@@ -1,0 +1,3 @@
+<button class="input-group-text" [disabled]="disabled" [ngClass]="{'disabled': disabled}"
+    (click)="inputFile.click()">Choose file</button>
+<input name="file" id="file" (change)="upload($event)" type="file" #inputFile hidden>
